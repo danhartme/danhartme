@@ -30,6 +30,7 @@ body, html {
 .ticker-content {
     display: inline-flex;
     animation: tickerMove 30s linear infinite;
+    height: 100%;
 }
 
 @keyframes tickerMove {
@@ -47,7 +48,7 @@ body, html {
 
 .container {
     max-width: 600px;
-    margin: 60px auto 0;
+    margin: 40px auto 0; /* Reduced top margin */
     padding: 20px;
     text-align: center;
 }
@@ -97,24 +98,25 @@ body, html {
 .bottom-slider {
     display: flex;
     animation: slide 20s linear infinite;
+    gap: 20px; /* Added gap between images */
 }
 
 .slide {
     flex: 0 0 auto;
     width: calc(20% - 16px);
-    margin-right: 20px;
     height: 200px;
     object-fit: cover;
 }
 
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(calc(-100% - 80px)); /* Adjusted for gap */}
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 10px;
+        margin-top: 30px; /* Adjusted for smaller screens */
     }
     .link-button {
         font-size: 16px;
@@ -140,6 +142,9 @@ body, html {
 }
 
 @media (max-width: 480px) {
+    .container {
+        margin-top: 25px; /* Adjusted for even smaller screens */
+    }
     .link-button {
         font-size: 14px;
         padding: 10px;
