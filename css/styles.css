@@ -29,7 +29,7 @@ body, html {
 
 .ticker-content {
     display: inline-flex;
-    animation: tickerMove 30s linear infinite;
+    animation: tickerMove 60s linear infinite;
     height: 100%;
 }
 
@@ -48,7 +48,7 @@ body, html {
 
 .container {
     max-width: 600px;
-    margin: 40px auto 0; /* Reduced top margin */
+    margin: 60px auto 0;
     padding: 20px;
     text-align: center;
 }
@@ -93,77 +93,38 @@ body, html {
     width: 100%;
     overflow: hidden;
     margin-top: 20px;
+    padding: 10px 0;
 }
 
 .bottom-slider {
     display: flex;
     animation: slide 20s linear infinite;
-    gap: 20px; /* Added gap between images */
+    width: calc(200% + 100px); /* Adjusted width */
 }
 
 .slide {
     flex: 0 0 auto;
-    width: calc(20% - 16px);
+    width: calc(20% - 20px); /* Adjusted width */
     height: 200px;
     object-fit: cover;
+    margin-right: 20px; /* Added margin for spacing */
 }
 
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100% - 80px)); /* Adjusted for gap */}
+    100% { transform: translateX(calc(-50% - 50px)); } /* Adjusted translation */
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
-        margin-top: 30px; /* Adjusted for smaller screens */
-    }
-    .link-button {
-        font-size: 16px;
-        padding: 12px;
-    }
-    .logo {
-        width: 80px;
-        height: 80px;
-    }
-    .ticker-top {
-        height: 30px;
-    }
-    .ticker-content-wrapper {
-        height: 26px;
-    }
-    .ticker-item {
-        line-height: 26px;
-    }
     .slide {
-        width: calc(33.333% - 14px);
+        width: calc(33.333% - 20px);
         height: 150px;
     }
 }
 
 @media (max-width: 480px) {
-    .container {
-        margin-top: 25px; /* Adjusted for even smaller screens */
-    }
-    .link-button {
-        font-size: 14px;
-        padding: 10px;
-    }
-    .logo {
-        width: 60px;
-        height: 60px;
-    }
-    .ticker-top {
-        height: 25px;
-    }
-    .ticker-content-wrapper {
-        height: 21px;
-    }
-    .ticker-item {
-        line-height: 21px;
-    }
     .slide {
-        width: calc(50% - 10px);
+        width: calc(50% - 20px);
         height: 100px;
     }
 }
