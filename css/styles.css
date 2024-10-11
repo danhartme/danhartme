@@ -28,9 +28,13 @@ body, html {
 }
 
 .ticker-content {
-    display: inline-flex;
+    display: flex;
     animation: tickerMove 30s linear infinite;
-    height: 100%;
+}
+
+.ticker-block {
+    display: flex;
+    white-space: nowrap;
 }
 
 @keyframes tickerMove {
@@ -42,7 +46,6 @@ body, html {
     flex-shrink: 0;
     padding: 0 20px;
     font-weight: bold;
-    white-space: nowrap;
     line-height: 36px;
 }
 
@@ -93,17 +96,17 @@ body, html {
     width: 100%;
     overflow: hidden;
     margin-top: 20px;
+    display: flex;
 }
 
 .bottom-slider {
     display: flex;
     animation: slide 20s linear infinite;
-    width: 200%;
 }
 
 .slide {
     flex: 0 0 auto;
-    width: calc(10% - 20px);
+    width: 200px;
     height: 200px;
     object-fit: cover;
     margin-right: 20px;
@@ -111,7 +114,7 @@ body, html {
 
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-100%); }
 }
 
 @media (max-width: 768px) {
@@ -136,7 +139,7 @@ body, html {
         line-height: 26px;
     }
     .slide {
-        width: calc(20% - 20px);
+        width: 150px;
         height: 150px;
     }
 }
@@ -160,7 +163,7 @@ body, html {
         line-height: 21px;
     }
     .slide {
-        width: calc(30% - 20px);
+        width: 100px;
         height: 100px;
     }
 }
