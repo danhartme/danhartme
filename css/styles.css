@@ -15,37 +15,34 @@ body, html {
     left: 0;
     height: 40px;
     z-index: 1000;
-    display: flex;
-    flex-direction: column;
 }
 
 .ticker-stroke {
     height: 2px;
     background-color: #0000ff;
-    flex-shrink: 0;
 }
 
 .ticker-content-wrapper {
-    flex-grow: 1;
+    height: 36px;
     overflow: hidden;
 }
 
 .ticker-content {
-    display: inline-flex;
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: ticker 30s linear infinite;
+    display: flex;
+    animation: tickerMove 30s linear infinite;
 }
 
-@keyframes ticker {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-100%, 0, 0); }
+@keyframes tickerMove {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
 .ticker-item {
-    display: inline-block;
+    flex-shrink: 0;
     padding: 0 20px;
     font-weight: bold;
+    white-space: nowrap;
+    line-height: 36px;
 }
 
 .container {
@@ -99,12 +96,11 @@ body, html {
 
 .bottom-slider {
     display: flex;
-    width: calc(200% + 80px);
     animation: slide 20s linear infinite;
 }
 
 .slide {
-    width: calc(20% - 16px);
+    flex: 0 0 calc(20% - 20px);
     height: 200px;
     background-color: #0000ff;
     margin-right: 20px;
@@ -112,28 +108,30 @@ body, html {
 
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 40px)); }
+    100% { transform: translateX(calc(-100% - 100px)); }
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 10px;
     }
-
     .link-button {
         font-size: 16px;
         padding: 12px;
     }
-
     .logo {
         width: 80px;
         height: 80px;
     }
-
     .ticker-top {
         height: 30px;
     }
-
+    .ticker-content-wrapper {
+        height: 26px;
+    }
+    .ticker-item {
+        line-height: 26px;
+    }
     .slide {
         height: 150px;
     }
@@ -144,16 +142,19 @@ body, html {
         font-size: 14px;
         padding: 10px;
     }
-
     .logo {
         width: 60px;
         height: 60px;
     }
-
     .ticker-top {
         height: 25px;
     }
-
+    .ticker-content-wrapper {
+        height: 21px;
+    }
+    .ticker-item {
+        line-height: 21px;
+    }
     .slide {
         height: 100px;
     }
