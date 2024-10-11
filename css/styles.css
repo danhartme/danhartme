@@ -2,47 +2,52 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: white;
-    color: #000;
+    background-color: transparent;
+    color: #0000ff;
 }
-
 .ticker-top {
     width: 100%;
     overflow: hidden;
-    background-color: white;
+    background-color: transparent;
     position: fixed;
     top: 0;
     left: 0;
-    border-top: 2px solid #0000ff;
-    border-bottom: 2px solid #0000ff;
+    height: 40px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
 }
-
+.ticker-stroke {
+    height: 2px;
+    background-color: #0000ff;
+    flex-shrink: 0;
+}
+.ticker-content-wrapper {
+    flex-grow: 1;
+    overflow: hidden;
+}
 .ticker-content {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
+    display: flex;
     animation: ticker 30s linear infinite;
+    height: 100%;
+    align-items: center;
 }
-
-.ticker-content span {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #0000ff;
-    font-weight: bold;
-}
-
 @keyframes ticker {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-100%, 0, 0); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
-
+.ticker-item {
+    flex: 0 0 auto;
+    padding: 0 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
 .container {
     max-width: 600px;
-    margin: 80px auto 0;
+    margin: 60px auto 0;
     padding: 20px;
     text-align: center;
 }
-
 .logo {
     width: 100px;
     height: 100px;
@@ -50,9 +55,10 @@ body, html {
     border-radius: 50%;
     margin: 0 auto 20px;
 }
-
 .link-button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: transparent;
     color: #0000ff;
     border: 2px solid #0000ff;
@@ -64,64 +70,21 @@ body, html {
     font-size: 18px;
     font-weight: bold;
 }
-
 .link-button:hover {
     background-color: #0000ff;
     color: white;
 }
-
+.link-button svg {
+    margin-right: 10px;
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+}
 .ticker-bottom {
     width: 100%;
     overflow: hidden;
     margin-top: 20px;
 }
-
 .bottom-slider {
     display: flex;
     animation: slide 20s linear infinite;
-}
-
-.bottom-slider img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-    .link-button {
-        font-size: 16px;
-        padding: 12px;
-    }
-    .logo {
-        width: 80px;
-        height: 80px;
-    }
-    .bottom-slider img {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .link-button {
-        font-size: 14px;
-        padding: 10px;
-    }
-    .logo {
-        width: 60px;
-        height: 60px;
-    }
-    .bottom-slider img {
-        width: 100px;
-        height: 100px;
-    }
-}
