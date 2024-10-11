@@ -90,8 +90,8 @@
             animation: slide 20s linear infinite;
         }
         .bottom-slider img {
-            width: 400px; /* Doubled from 200px */
-            height: 400px; /* Doubled from 200px */
+            width: 600px; /* Doubled from 200px */
+            height: 600px; /* Doubled from 200px */
             object-fit: cover;
             flex-shrink: 0;
             margin-right: 40px; /* Doubled from 20px to maintain proportions */
