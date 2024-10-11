@@ -1,96 +1,42 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: transparent;
-    color: #0000ff;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOHDAN KHARCHENKO Linktree</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ticker-top">
+        <div class="ticker-content">
+            <span>BOHDAN KHARCHENKO</span>
+            <span>BOHDAN KHARCHENKO</span>
+            <span>BOHDAN KHARCHENKO</span>
+            <span>BOHDAN KHARCHENKO</span>
+            <span>BOHDAN KHARCHENKO</span>
+            <span>BOHDAN KHARCHENKO</span>
+        </div>
+    </div>
 
-.ticker-top {
-    width: 100%;
-    overflow: hidden;
-    background-color: transparent;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 40px;
-    z-index: 1000;
-}
+    <div class="container">
+        <div class="logo"></div>
+        <h1>@yourusername</h1>
+        <p>Your catchy bio goes here. Make it short and sweet!</p>
+        
+        <a href="#" class="link-button">Instagram</a>
+        <a href="#" class="link-button">Behance</a>
+        <a href="#" class="link-button">LinkedIn</a>
+        <a href="#" class="link-button">Facebook</a>
+    </div>
 
-.ticker-stroke {
-    height: 2px;
-    background-color: #0000ff;
-}
-
-.ticker-content-wrapper {
-    height: 36px;
-    overflow: hidden;
-}
-
-.ticker-content {
-    display: inline-flex;
-    animation: tickerMove 60s linear infinite;
-    height: 100%;
-}
-
-@keyframes tickerMove {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.ticker-item {
-    flex-shrink: 0;
-    padding: 0 20px;
-    font-weight: bold;
-    white-space: nowrap;
-    line-height: 36px;
-}
-
-.container {
-    max-width: 600px;
-    margin: 60px auto 0;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Rest of the CSS for .logo, .link-button, etc. remains the same */
-
-.ticker-bottom {
-    width: 100%;
-    overflow: hidden;
-    margin-top: 20px;
-    padding: 10px 0;
-}
-
-.bottom-slider {
-    display: flex;
-    animation: slide 20s linear infinite;
-    width: calc(200% + 100px); /* Adjusted width */
-}
-
-.slide {
-    flex: 0 0 auto;
-    width: calc(20% - 20px); /* Adjusted width */
-    height: 200px;
-    object-fit: cover;
-    margin-right: 20px; /* Added margin for spacing */
-}
-
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 50px)); } /* Adjusted translation */
-}
-
-@media (max-width: 768px) {
-    .slide {
-        width: calc(33.333% - 20px);
-        height: 150px;
-    }
-}
-
-@media (max-width: 480px) {
-    .slide {
-        width: calc(50% - 20px);
-        height: 100px;
-    }
-}
+    <div class="ticker-bottom">
+        <div class="bottom-slider">
+            <img src="image1.png" alt="Image 1">
+            <img src="image2.png" alt="Image 2">
+            <img src="image3.png" alt="Image 3">
+            <img src="image4.png" alt="Image 4">
+            <img src="image5.png" alt="Image 5">
+        </div>
+    </div>
+</body>
+</html>
