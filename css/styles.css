@@ -2,56 +2,43 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: transparent;
-    color: #0000ff;
+    background-color: white;
+    color: #000;
 }
 
 .ticker-top {
     width: 100%;
     overflow: hidden;
-    background-color: transparent;
+    background-color: white;
     position: fixed;
     top: 0;
     left: 0;
-    height: 40px;
-    z-index: 1000;
-}
-
-.ticker-stroke {
-    height: 2px;
-    background-color: #0000ff;
-}
-
-.ticker-content-wrapper {
-    height: 36px;
-    overflow: hidden;
+    border-top: 2px solid #0000ff;
+    border-bottom: 2px solid #0000ff;
 }
 
 .ticker-content {
-    display: flex;
-    animation: tickerMove 30s linear infinite;
-}
-
-.ticker-block {
-    display: flex;
+    display: inline-block;
     white-space: nowrap;
+    padding-left: 100%;
+    animation: ticker 30s linear infinite;
 }
 
-@keyframes tickerMove {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-.ticker-item {
-    flex-shrink: 0;
-    padding: 0 20px;
+.ticker-content span {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #0000ff;
     font-weight: bold;
-    line-height: 36px;
+}
+
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
 }
 
 .container {
     max-width: 600px;
-    margin: 60px auto 0;
+    margin: 80px auto 0;
     padding: 20px;
     text-align: center;
 }
@@ -65,9 +52,7 @@ body, html {
 }
 
 .link-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     background-color: transparent;
     color: #0000ff;
     border: 2px solid #0000ff;
@@ -85,18 +70,10 @@ body, html {
     color: white;
 }
 
-.link-button svg {
-    margin-right: 10px;
-    fill: currentColor;
-    width: 24px;
-    height: 24px;
-}
-
 .ticker-bottom {
     width: 100%;
     overflow: hidden;
     margin-top: 20px;
-    display: flex;
 }
 
 .bottom-slider {
@@ -104,8 +81,7 @@ body, html {
     animation: slide 20s linear infinite;
 }
 
-.slide {
-    flex: 0 0 auto;
+.bottom-slider img {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -129,16 +105,7 @@ body, html {
         width: 80px;
         height: 80px;
     }
-    .ticker-top {
-        height: 30px;
-    }
-    .ticker-content-wrapper {
-        height: 26px;
-    }
-    .ticker-item {
-        line-height: 26px;
-    }
-    .slide {
+    .bottom-slider img {
         width: 150px;
         height: 150px;
     }
@@ -153,16 +120,7 @@ body, html {
         width: 60px;
         height: 60px;
     }
-    .ticker-top {
-        height: 25px;
-    }
-    .ticker-content-wrapper {
-        height: 21px;
-    }
-    .ticker-item {
-        line-height: 21px;
-    }
-    .slide {
+    .bottom-slider img {
         width: 100px;
         height: 100px;
     }
