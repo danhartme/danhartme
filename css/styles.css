@@ -3,13 +3,12 @@
             padding: 0;
             font-family: Arial, sans-serif;
             background-color: transparent;
-            color: #0000ff;
+            color: #0e0e16;
         }
         .ticker-top {
             width: 100%;
             overflow: hidden;
             background-color: transparent;
-            position: fixed;
             top: 0;
             left: 0;
             height: 40px;
@@ -19,7 +18,7 @@
         }
         .ticker-stroke {
             height: 2px;
-            background-color: #0000ff;
+            background-color: #0e0e16;
             flex-shrink: 0;
         }
         .ticker-content-wrapper {
@@ -39,19 +38,21 @@
         }
         .ticker-item {
             flex: 0 0 auto;
+            font-size: 24px;
+            font-weight: bold;
             padding: 0 20px;
             font-weight: bold;
         }
         .container {
             max-width: 600px;
-            margin: 60px auto 0;
+            margin: 40px auto 0;
             padding: 20px;
             text-align: center;
         }
         .logo {
             width: 100px;
             height: 100px;
-            background-color: #0000ff;
+            background-color: #0e0e16;
             border-radius: 50%;
             margin: 0 auto 20px;
         }
@@ -60,8 +61,8 @@
             align-items: center;
             justify-content: center;
             background-color: transparent;
-            color: #0000ff;
-            border: 2px solid #0000ff;
+            color: #0e0e16;
+            border: 2px solid #0e0e16;
             padding: 15px;
             margin: 15px 0;
             text-decoration: none;
@@ -71,7 +72,7 @@
             font-weight: bold;
         }
         .link-button:hover {
-            background-color: #0000ff;
+            background-color: #0e0e16;
             color: white;
         }
         .link-button svg {
@@ -83,18 +84,19 @@
         .ticker-bottom {
             width: 100%;
             overflow: hidden;
-            margin-top: 20px;
+            margin-top: 40px;
         }
         .bottom-slider {
             display: flex;
             animation: slide 20s linear infinite;
         }
         .bottom-slider img {
-            width: 200px;
-            height: 200px;
+            width: 340px;
+            height: 340px;
             object-fit: cover;
             flex-shrink: 0;
-            margin-right: 20px;
+            margin-right: 40px;
+            margin-bottom: 40px;
         }
         @keyframes slide {
             0% { transform: translateX(0); }
