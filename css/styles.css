@@ -88,7 +88,7 @@
         }
         .bottom-slider {
             display: flex;
-            filter: drop-shadow(gray 0rem 0rem 0.75rem);
+            filter: drop-shadow(gray 0rem 0.5rem 0.75rem);
             animation: slide 20s linear infinite;
         }
         .bottom-slider img {
