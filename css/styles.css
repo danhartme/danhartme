@@ -92,8 +92,8 @@
             animation: slide 20s linear infinite;
         }
         .bottom-slider img {
-            width: 340px;
-            height: 340px;
+            width: 360px;
+            height: 360px;
             object-fit: cover;
             flex-shrink: 0;
             margin-right: 40px;
